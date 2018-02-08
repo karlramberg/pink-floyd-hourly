@@ -1,6 +1,8 @@
 from secret import ACCESS_SECRET, ACCESS_TOKEN, CONSUMER_KEY, CONSUMER_SECRET
 import tweepy as ty
-import random
+import random as r
+import datetime as t
+import time
 
 def setTwitterAuth():
     auth = ty.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
@@ -8,11 +10,25 @@ def setTwitterAuth():
     api = ty.API(auth)
     return api
 
-def tweetHelloWorld(api):
-    api.update_status("This is an automated tweet"
-                      " using a bot! Hello, World! #{}"
-                      .format(random.randint(0, 10000)))
+def testTweet(api):
+    api.update_status("test tweet #{}"
+                      .format(r.randint(0, 10000)))
+
+def tweetLyric(api, hr):
+    while(hr == t.datetime.now().hour):
+        time.sleep(5)
+    hr = t.datetime.now().hour
+    api.update_status("hr " + str(hr))
+    print(hr)
+    tweetLyric(api, hr)
 
 if __name__ == "__main__":
     api = setTwitterAuth()
-    tweetHelloWorld(api)
+    user = api.me()
+    print(user.screen_name)
+    print("bot started...")
+
+    hr = t.datetime.now().hour
+    print(hr)
+
+    tweetLyric(api, hr)
