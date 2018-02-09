@@ -1,3 +1,5 @@
+# thanks to @ejmg for the template
+
 from secret import ACCESS_SECRET, ACCESS_TOKEN, CONSUMER_KEY, CONSUMER_SECRET
 import tweepy as ty
 import random as r
@@ -16,9 +18,9 @@ def testTweet(api):
 
 def tweetLyric(api, hr):
     while(hr == t.datetime.now().hour):
-        time.sleep(5)
+        time.sleep(30)
     hr = t.datetime.now().hour
-    api.update_status("hr " + str(hr))
+    api.update_status("giddy up no. " + str(hr))
     print(hr)
     tweetLyric(api, hr)
 
