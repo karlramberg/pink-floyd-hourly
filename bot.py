@@ -18,9 +18,9 @@ def testTweet(api):
 
 def tweetLyric(api, hr):
     while(hr == t.datetime.now().hour):
-        time.sleep(30)
+        time.sleep(10)
     hr = t.datetime.now().hour
-    api.update_status("giddy up no. " + str(hr))
+    api.update_status("newline\ntest\nno. " + str(hr))
     print(hr)
     tweetLyric(api, hr)
 
