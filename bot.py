@@ -17,28 +17,32 @@ def testTweet(api):
                       .format(r.randint(0, 10000)))
 
 def tweetLyric(api, hr, lines):
-    while(hr == t.datetime.now().second):
+    while(hr == t.datetime.now().hour):
         time.sleep(10)
-    hr = t.datetime.now().second
+    hr = t.datetime.now().hour
     api.update_status(randLine(lines))
-    print(hr)
+    print("[x] Tweet successful")
+    print("")
     tweetLyric(api, hr, lines)
 
 def randLine(lines):
     line = r.choice(lines)
+    print("[x] Tweeting... " + line)
     line = line.replace("+", "\n")
-    print(line)
     return line
 
 if __name__ == "__main__":
+    print("[x] Bot started")
+
     api = setTwitterAuth()
     user = api.me()
-    print(user.screen_name)
-    print("bot started...")
+    print("[x] Authenticated @" + user.screen_name)
 
-    hr = t.datetime.now().second
-    print(hr)
+    hr = t.datetime.now().hour
+    print("[x] Current time - " + str(t.datetime.now()))
 
     lines = open('tweets.txt', 'r').read().splitlines()
-    api.update_status(randLine(lines))
+    print("[x] Lyrics loaded")
+    print("")
+
     tweetLyric(api, hr, lines)
