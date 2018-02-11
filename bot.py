@@ -16,13 +16,19 @@ def testTweet(api):
     api.update_status("test tweet #{}"
                       .format(r.randint(0, 10000)))
 
-def tweetLyric(api, hr):
-    while(hr == t.datetime.now().hour):
+def tweetLyric(api, hr, lines):
+    while(hr == t.datetime.now().second):
         time.sleep(10)
-    hr = t.datetime.now().hour
-    api.update_status("newline\ntest\nno. " + str(hr))
+    hr = t.datetime.now().second
+    api.update_status(randLine(lines))
     print(hr)
-    tweetLyric(api, hr)
+    tweetLyric(api, hr, lines)
+
+def randLine(lines):
+    line = r.choice(lines)
+    line = line.replace("+", "\n")
+    print(line)
+    return line
 
 if __name__ == "__main__":
     api = setTwitterAuth()
@@ -30,7 +36,9 @@ if __name__ == "__main__":
     print(user.screen_name)
     print("bot started...")
 
-    hr = t.datetime.now().hour
+    hr = t.datetime.now().second
     print(hr)
 
-    tweetLyric(api, hr)
+    lines = open('tweets.txt', 'r').read().splitlines()
+    api.update_status(randLine(lines))
+    tweetLyric(api, hr, lines)
