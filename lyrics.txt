@@ -103,7 +103,7 @@ aSFoS --------------------------------------------------------------------------
 "And I never knew the moon could be so big / And I never knew the moon could be so blue"
 "And I'm grateful that you threw away my old shoes / And brought me here instead dressed in red"
 "And I'm wondering who could be writing this song" / "I don't care if the sun don't shine / And I don't care if nothing is mine / And I don't care if I'm nervous with you / I'll do my loving in the winter"
-"And the sea isn't green / And I love the Queen / And what exactly is a dream / And what exactly is a joke"
+"And the sea isn't green / And I love the Queen / And what exactly is a dream? / And what exactly is a joke?"
 
 More ---------------------------------------------------------------------------
 "In a churchyard by a river / Lazing in the haze of midday / Laughing in the grasses / And the graves"
@@ -984,17 +984,17 @@ aMLoR --------------------------------------------------------------------------
 
 tDB ----------------------------------------------------------------------------
 "As you look around this room tonight / Settle in your seat and dim the lights"
-"Do you want my blood, do you want my tears / What do you want / What do you want from me"
+"Do you want my blood, do you want my tears / What do you want / What do you want from me?"
 "Should I sing until I can't sing any more / Play these strings until my fingers are raw"
-"You're so hard to please / What do you want from me"
-"Do you think that I know something you don't know / What do you want from me"
-"If I don't promise you the answers would you go / What do you want from me"
-"Should I stand out in the rain / Do you want me to make a daisy chain for you"
-"I'm not the one you need  /What do you want from me"
+"You're so hard to please / What do you want from me?"
+"Do you think that I know something you don't know / What do you want from me?"
+"If I don't promise you the answers would you go / What do you want from me?"
+"Should I stand out in the rain / Do you want me to make a daisy chain for you?"
+"I'm not the one you need  /What do you want from me?"
 "You can have anything you want / You can drift, you can dream, even walk on water / Anything you want"
-"You can own everything you see / Sell your soul for complete control / Is that really what you need"
+"You can own everything you see / Sell your soul for complete control / Is that really what you need?"
 "You can lose yourself this night / See inside there is nothing to hide / Turn and face the light"
-"What do you want from me"
+"What do you want from me?"
 
 "Did you know...it was all going to go so wrong for you / And did you see it was all going to be so right for me"
 "Why did we tell you then / You were always the golden boy then / And that you'd never lose that light in your eyes"
