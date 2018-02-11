@@ -1,6 +1,7 @@
 # thanks to @ejmg for the template
 
 from secret import ACCESS_SECRET, ACCESS_TOKEN, CONSUMER_KEY, CONSUMER_SECRET
+from collections import deque
 import tweepy as ty
 import random as r
 import datetime as t
@@ -12,24 +13,33 @@ def setTwitterAuth():
     api = ty.API(auth)
     return api
 
-def testTweet(api):
-    api.update_status("test tweet #{}"
-                      .format(r.randint(0, 10000)))
-
-def tweetLyric(api, hr, lines):
-    while(hr == t.datetime.now().hour):
+def tweetLyric(hr, api, tweets):
+    while(hr == t.datetime.now().hour): # wait until a new hour
         time.sleep(10)
     hr = t.datetime.now().hour
-    api.update_status(randLine(lines))
-    print("[x] Tweet successful")
-    print("")
-    tweetLyric(api, hr, lines)
 
-def randLine(lines):
-    line = r.choice(lines)
-    print("[x] Tweeting... " + line)
-    line = line.replace("+", "\n")
-    return line
+    tweet = getTweet(tweets) # get a random tweet
+
+    print("[x] Tweeting... " + tweet)
+    tweet = tweet.replace("+", "\n") # formatting
+    api.update_status(tweet)
+    print("[x] Tweet successful")
+
+    tweetLyric(hr, api, tweets) # again
+
+def getTweet(tweets):
+    tweet = r.choice(tweets)
+    while(checkHist(tweet) == False): # twitter hates duplicate tweets
+        tweet = r.choice(tweets)
+    return tweet
+
+def checkHist(tweet):
+    stati = api.user_timeline(count=96, tweet_mode="extended") # load the past 4 days
+    hist = [t.full_text for t in stati]
+    for i in hist:
+        if tweet == i.replace("\n","+"):
+            return False
+    return True
 
 if __name__ == "__main__":
     print("[x] Bot started")
@@ -41,8 +51,12 @@ if __name__ == "__main__":
     hr = t.datetime.now().hour
     print("[x] Current time - " + str(t.datetime.now()))
 
-    lines = open('tweets.txt', 'r').read().splitlines()
+    tweets = open('tweets.txt', 'r').read().splitlines()
     print("[x] Lyrics loaded")
     print("")
 
-    tweetLyric(api, hr, lines)
+#    tw = getTweet(tweets)
+#    print("[x] Tweeting..." + tw)
+#    tw = tw.replace("+", "\n")
+#    api.update_status(tw)
+    tweetLyric(hr, api, tweets)
