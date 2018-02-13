@@ -1,2 +1,2 @@
-# Pink FLoyd Hourly
+# Pink Floyd Hourly
 [@pinkfloydhourly](https://twitter.com/pinkfloydhourly)
