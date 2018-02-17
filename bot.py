@@ -20,17 +20,20 @@ def tweetLyric(hr, api, tweets):
 
     tweet = getTweet(tweets) # get a random tweet
 
-    print("[x] Tweeting... " + tweet)
     tweet = tweet.replace("+", "\n") # formatting
     api.update_status(tweet)
     print("[x] Tweet successful")
+    print("")
 
     tweetLyric(hr, api, tweets) # again
 
 def getTweet(tweets):
     tweet = r.choice(tweets)
+    print("[x] Tweeting... " + tweet)
     while(checkHist(tweet) == False): # twitter hates duplicate tweets
         tweet = r.choice(tweets)
+        print("[x] Tweeting... " + tweet)
+        print("[x] Duplicate, Retrying...")
     return tweet
 
 def checkHist(tweet):

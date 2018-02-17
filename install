@@ -1,0 +1,8 @@
+#!/bin/sh
+chmod a+x pfh
+cp pfh /usr/local/bin
+
+mkdir /opt/pfh
+cp *.py /opt/pfh
+cp *.txt /opt/pfh
+cp README.md /opt/pfh
