@@ -32,8 +32,8 @@ def getTweet(tweets):
     print("[x] Tweeting... " + tweet)
     while(checkHist(tweet) == False): # twitter hates duplicate tweets
         tweet = r.choice(tweets)
-        print("[x] Tweeting... " + tweet)
         print("[x] Duplicate, Retrying...")
+        print("[x] Tweeting... " + tweet)
     return tweet
 
 def checkHist(tweet):
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     hr = t.datetime.now().hour
     print("[x] Current time - " + str(t.datetime.now()))
 
-    tweets = open('tweets.txt', 'r').read().splitlines()
+    tweets = open('/opt/pfh/tweets.txt', 'r').read().splitlines()
     print("[x] Lyrics loaded")
     print("")
 
