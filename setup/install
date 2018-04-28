@@ -2,10 +2,10 @@
 apt install python3 python3-pip
 pip3 install tweepy
 
-chmod a+x pfh
-cp pfh /usr/local/bin
+chmod a+x ../pfh
+cp ../pfh /usr/local/bin
 
 mkdir /opt/pfh
-cp *.py /opt/pfh
-cp *.txt /opt/pfh
-cp README.md /opt/pfh
+cp ../bot.py /opt/pfh
+cp ../res/*.txt /opt/pfh
+cp ../README.md /opt/pfh
