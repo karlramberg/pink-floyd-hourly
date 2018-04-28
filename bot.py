@@ -25,7 +25,7 @@ def tweetLyric(hr, api, tweets):
     print("[x] Tweet successful")
     print("")
 
-    tweetLyric(hr, api, tweets) # again
+    # tweetLyric(hr, api, tweets) # again
 
 def getTweet(tweets):
     tweet = r.choice(tweets)
@@ -58,8 +58,4 @@ if __name__ == "__main__":
     print("[x] Lyrics loaded")
     print("")
 
-#    tw = getTweet(tweets)
-#    print("[x] Tweeting..." + tw)
-#    tw = tw.replace("+", "\n")
-#    api.update_status(tw)
     tweetLyric(hr, api, tweets)
