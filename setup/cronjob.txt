@@ -1,0 +1,5 @@
+# Copy text below when setting up a cron job
+# ~$ crontab -e
+
+SHELL=/bin/sh
+0   *   *   *   *   /usr/local/bin/pfh

@@ -25,8 +25,6 @@ def tweetLyric(hr, api, tweets):
     print("[x] Tweet successful")
     print("")
 
-    # tweetLyric(hr, api, tweets) # again
-
 def getTweet(tweets):
     tweet = r.choice(tweets)
     print("[x] Tweeting... " + tweet)
@@ -54,7 +52,7 @@ if __name__ == "__main__":
     hr = t.datetime.now().hour
     print("[x] Current time - " + str(t.datetime.now()))
 
-    tweets = open('/opt/pfh/tweets.txt', 'r').read().splitlines()
+    tweets = open('/opt/pfh/res/tweets.txt', 'r').read().splitlines()
     print("[x] Lyrics loaded")
     print("")
 
