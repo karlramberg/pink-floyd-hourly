@@ -17,16 +17,16 @@ def tweetLyric(api, tweets):
 
     tweet = tweet.replace("+", "\n") # formatting
     api.update_status(tweet)
-    print("[x] Tweet successful")
+    print("> Tweet successful")
     print("")
 
 def getTweet(tweets):
     tweet = r.choice(tweets)
-    print("[x] Tweeting... " + tweet)
+    print("> Tweeting... " + tweet)
     while(checkHist(tweet) == False): # twitter hates duplicate tweets
         tweet = r.choice(tweets)
-        print("[x] Duplicate, Retrying...")
-        print("[x] Tweeting... " + tweet)
+        print("> Duplicate, Retrying...")
+        print("> Tweeting... " + tweet)
     return tweet
 
 def checkHist(tweet):
@@ -38,14 +38,14 @@ def checkHist(tweet):
     return True
 
 if __name__ == "__main__":
-    print("[x] Bot started")
+    print("> Bot started")
 
     api = setTwitterAuth()
     user = api.me()
-    print("[x] Authenticated @" + user.screen_name)
+    print("> Authenticated @" + user.screen_name)
 
-    tweets = open('/opt/pfh/res/tweets.txt', 'r').read().splitlines()
-    print("[x] Lyrics loaded")
+    tweets = open('/opt/pfh/tweets.txt', 'r').read().splitlines()
+    print("> Lyrics loaded")
     print("")
 
-    tweetLyric(hr, api, tweets)
+    tweetLyric(api, tweets)
