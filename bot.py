@@ -4,8 +4,6 @@ from secret import ACCESS_SECRET, ACCESS_TOKEN, CONSUMER_KEY, CONSUMER_SECRET
 from collections import deque
 import tweepy as ty
 import random as r
-import datetime as t
-import time
 
 def setTwitterAuth():
     auth = ty.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
@@ -13,10 +11,7 @@ def setTwitterAuth():
     api = ty.API(auth)
     return api
 
-def tweetLyric(hr, api, tweets):
-    while(hr == t.datetime.now().hour): # wait until a new hour
-        time.sleep(10)
-    hr = t.datetime.now().hour
+def tweetLyric(api, tweets):
 
     tweet = getTweet(tweets) # get a random tweet
 
@@ -48,9 +43,6 @@ if __name__ == "__main__":
     api = setTwitterAuth()
     user = api.me()
     print("[x] Authenticated @" + user.screen_name)
-
-    hr = t.datetime.now().hour
-    print("[x] Current time - " + str(t.datetime.now()))
 
     tweets = open('/opt/pfh/res/tweets.txt', 'r').read().splitlines()
     print("[x] Lyrics loaded")
