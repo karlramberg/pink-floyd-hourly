@@ -1,4 +1,4 @@
-# thanks to @ejmg for the template
+# Thank you to @ejmg for the template
 
 from secret import ACCESS_SECRET, ACCESS_TOKEN, CONSUMER_KEY, CONSUMER_SECRET
 from collections import deque
